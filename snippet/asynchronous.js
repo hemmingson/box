@@ -1,96 +1,94 @@
-const root = document.getElementById('root')
+const box = document.getElementById('box')
 const light = ['red', 'yellow', 'green']
 const time = [5, 2, 10]
 let pos = -1
 
 const render = () => {
-  light.map((x) => {
+  light.map((o) => {
     const div = document.createElement('div')
-    div.setAttribute('color', `${x}`)
-    div.classList.add('circle')
-    root.appendChild(div)
+    div.setAttribute('color', `${o}`)
+    div.classList.add('light')
+    box.appendChild(div)
   })
 }
 
-const changeLight = () => {
+const change = () => {
   pos++
-  if (pos > 2) {
-    pos = 0
-  }
-  const nodeList = document.querySelectorAll('.circle')
-  nodeList[pos].classList.add(nodeList[pos].getAttribute('color'))
-  clearStatus(nodeList[pos])
+  if (pos > 2) pos = 0
+  const list = document.querySelectorAll('.light')
+  list[pos].classList.add(list[pos].getAttribute('color'))
+  clear(list[pos])
 }
 
-const clearStatus = (x) => {
-  let nodeList = Array.from(document.getElementsByClassName('circle'))
-  nodeList = nodeList.filter((node) => node !== x)
-  nodeList.map((node) => node.classList.remove(node.getAttribute('color')))
+const clear = (o) => {
+  let list = Array.from(document.getElementsByClassName('light'))
+  list = list.filter((node) => node !== o)
+  list.map((node) => node.classList.remove(node.getAttribute('color')))
 }
 
-const switchLightTimer = () => {
-  changeLight()
+const first = () => {
+  change()
   setTimeout(() => {
-    changeLight()
+    change()
     setTimeout(() => {
-      changeLight()
-      setTimeout(switchLightTimer, 10000)
+      change()
+      setTimeout(first, 10000)
     }, 2000)
   }, 5000)
 }
 
-const swithLightPromise = () => {
-  return new Promise((resolve) => {
-    changeLightPromise(5000)
-      .then(() => changeLightPromise(2000))
-      .then(() => changeLightPromise(10000))
-      .then(swithLightPromise)
+const second = () => {
+  return new Promise(() => {
+    _change(5000)
+      .then(() => _change(2000))
+      .then(() => _change(10000))
+      .then(second)
   })
 }
 
-const changeLightPromise = (duration) => {
+const _change = (dur) => {
   return new Promise((resolve) => {
-    changeLight()
-    turnOn(duration).then(resolve)
+    change()
+    sleep(dur).then(resolve)
   })
 }
 
-const switchLightAsync = async () => {
-  for (let i in light) {
-    changeLight()
-    await turnOn(time[pos] * 1000)
+const third = async () => {
+  for (let i = 0; i < light.length; i++) {
+    change()
+    await sleep(time[pos] * 1000)
   }
-  switchLightAsync()
+  third()
 }
 
-function* switchLightWithGenerator() {
-  while (26) {
-    changeLight()
-    yield turnOn(5000)
-    changeLight()
-    yield turnOn(2000)
-    changeLight()
-    yield turnOn(10000)
+function* forth() {
+  while (1) {
+    change()
+    yield sleep(5000)
+    change()
+    yield sleep(2000)
+    change()
+    yield sleep(10000)
   }
 }
 
-const getIteratorStatus = (iterator) => {
-  const { value, done } = iterator.next()
+const _filter = (iter) => {
+  const { value, done } = iter.next()
   if (done) return
-  if (value instanceof Promise) value.then(() => getIteratorStatus(iterator))
+  if (value instanceof Promise) value.then(() => _filter(iter))
 }
 
-const useGenerator = (generator) => getIteratorStatus(generator())
+const go = (gen) => _filter(gen())
 
-const generatorRunner = () => useGenerator(switchLightWithGenerator)
+const go4 = () => go(forth)
 
-const turnOn = (duration) => {
+const sleep = (dur) => {
   return new Promise((resolve) => {
-    setTimeout(resolve, duration)
+    setTimeout(resolve, dur)
   })
 }
 
-const runner = (x) => x.map((x) => x())
+const engine = (f) => f.map((f) => f())
 
-console.log('%c hello 🚥 ', 'background: #000; color: #f0db4f')
-runner([render, generatorRunner])
+console.log('%c hello 🚥 ', 'background: #adefd1; color: #00203f')
+engine([render, third])
