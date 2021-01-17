@@ -1,5 +1,5 @@
 /**
- *  📦 @trick
+ *  🧰 @trick
  *
  *  -> primitive value
  */

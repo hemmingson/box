@@ -1,5 +1,5 @@
 /**
- *  📦 @trick
+ *  🧰 @trick
  *
  *  -> object & function
  */
