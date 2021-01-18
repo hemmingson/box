@@ -1,5 +1,5 @@
 ![](assets/favicon.ico)
 
-box with tape
+javascript and algorithm
 
 ---
