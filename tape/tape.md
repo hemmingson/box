@@ -43,3 +43,9 @@ while (l <= r) {
   else l = mid + 1
 }
 ```
+
+| operator | name                         | explanation                                   |
+| -------- | ---------------------------- | --------------------------------------------- |
+| `<<`     | left shift                   | 0 bits are added to the right                 |
+| `>>`     | sign-propagating right shift | the copies of the leftmost bit are shifted in |
+| `>>>`    | zero-fill right shift        | fill 0 bits to the left                       |
