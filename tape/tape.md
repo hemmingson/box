@@ -37,7 +37,7 @@ new Set([...m].filter((item) => !n.has(item)))
 let l = 0,
   r = s.length
 while (l <= r) {
-  const mid = (l + r) >>> 1
+  const mid = (l + r) >>> 1 // l + ((r - l) >> 1)
   if (s[mid] === target) return mid
   else if (s[mid] > target) r = mid - 1
   else l = mid + 1
