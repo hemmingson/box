@@ -20,11 +20,10 @@ const kmp = (s, p) => {
 
     while (i < s.length) {
       if (s[i] === p[j]) {
-        i++
-        j++
-      }
-      if (j === l - 1) return true
-      else if (j) j = t[j - 1]
+        if (j === l - 1) return true
+
+        i++, j++
+      } else if (j) j = t[j - 1]
       else i++
     }
   }
