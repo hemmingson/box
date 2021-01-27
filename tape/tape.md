@@ -49,3 +49,17 @@ while (l <= r) {
 | <<       | left shift                   | 0 bits are added to the right                 |
 | >>       | sign-propagating right shift | the copies of the leftmost bit are shifted in |
 | >>>      | zero-fill right shift        | fill 0 bits to the left                       |
+
+3. linked list
+
+> a linked list is a linear collection of data elements whose order is not given by their physical placement in memory
+
+![](../assets/linked-list.png)
+
+- pros
+  - easy to remove or add node without reorganize entire data structure
+- cons
+  - search operation is slow
+  - use more memory than array
+- type
+  - singly | doubly | circular
