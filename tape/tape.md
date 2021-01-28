@@ -58,6 +58,7 @@ while (l <= r) {
 
 - pros
   - easy to remove or add node without reorganize entire data structure
+  - no waste of memory
 - cons
   - search operation is slow
   - use more memory than array
