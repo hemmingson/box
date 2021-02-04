@@ -63,4 +63,45 @@ class LinkedList {
     this.length--
     return lastNode.val
   }
+
+  indexOf(val) {
+    if (!this.head) return -1
+
+    let cur = this.head,
+      count = 0
+    while (cur) {
+      if (cur.val === val) return count
+      cur = cur.next
+      count++
+    }
+
+    return -1
+  }
+
+  splice(start, count) {
+    if ((!start && !count) || !this.head) {
+      this.head = null
+      this.length = 0
+      return
+    }
+
+    let cur = this.head,
+      prev = null
+    for (let i = 0; i < start; i++) {
+      prev = cur
+      cur = cur.next
+    }
+
+    if ((!count && count !== 0) || count + start >= this.length) {
+      prev.next = null
+      this.length = start
+      return
+    }
+
+    for (let i = 0; i < count; i++) {
+      cur.val = cur.next.val
+      cur.next = cur.next.next
+      this.length--
+    }
+  }
 }
