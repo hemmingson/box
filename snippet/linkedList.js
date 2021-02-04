@@ -1,119 +1,66 @@
-function LinkedList() {
-  var head = null
-  var length = 0
+class Node {
+  constructor(val, next = null) {
+    this.val = val
+    this.next = next
+  }
+}
 
-  var Node = function (element) {
-    this.element = element
-    this.next = null
+class LinkedList {
+  constructor() {
+    this.head = null
+    this.length = 0
   }
 
-  this.size = function () {
-    return length
+  unshift(val) {
+    const node = new Node(val)
+
+    if (!this.head) this.head.next = node
+    else [this.head, node.next] = [node, this.head]
+
+    this.length++
   }
 
-  this.head = function () {
-    return head
+  shift() {
+    if (!this.head || !this.head.next) {
+      this.length = 0
+      return this.head?.val
+    }
+
+    const firstNode = this.head
+    this.head = this.head.next
+
+    this.length--
+    return firstNode.val
   }
 
-  this.add = function (element) {
-    var node = new Node(element)
-    if (!head) head = node
+  push(val) {
+    const node = new Node(val)
+
+    if (!this.head) this.head = node
     else {
-      currentNode = head
-
-      while (currentNode.next) {
-        currentNode = currentNode.next
-      }
-
-      currentNode.next = node
+      let cur = this.head
+      while (cur.next) cur = cur.next
+      cur.next = node
     }
 
-    length++
+    this.length++
   }
 
-  this.remove = function (element) {
-    var currentNode = head
-    var previousNode
-
-    if (currentNode.element === element) head = currentNode.next
-    else {
-      while (currentNode.element !== element) {
-        previousNode = currentNode
-        currentNode = currentNode.next
-      }
-
-      previousNode.next = currentNode.next
+  pop() {
+    if (!this.head || !this.head.next) {
+      this.length = 0
+      return this.head?.val
     }
 
-    length--
-  }
-
-  this.isEmpty = function () {
-    return length === 0
-  }
-
-  this.indexOf = function (element) {
-    var currentNode = head
-    var index = -1
-
-    while (currentNode) {
-      index++
-      if (currentNode.element === element) return index
-      currentNode = currentNode.next
+    let cur = this.head
+    while (cur.next.next) {
+      cur = cur.next
     }
 
-    return -1
-  }
+    const lastNode = cur.next
+    cur.next = null
 
-  this.elementAt = function (index) {
-    var currentNode = head
-    var count = 0
-    while (count < index) {
-      count++
-      currentNode = currentNode.next
-    }
-    return currentNode.element
-  }
-
-  this.addAt = function (index, element) {
-    var node = new Node(element)
-
-    var currentNode = head
-    var previousNode
-    var currentIndex = 0
-
-    if (index > length) return false
-
-    if (index === 0) {
-      node.next = currentNode
-      head = node
-    } else {
-      while (currentIndex < index) {
-        currentIndex++
-        previousNode = currentNode
-        currentNode = currentNode.next
-      }
-      node.next = currentNode
-      previousNode.next = node
-    }
-    length++
-  }
-
-  this.removeAt = function (index) {
-    var currentNode = head
-    var previousNode
-    var currentIndex = 0
-    if (index < 0 || index >= length) return null
-    if (index === 0) head = currentNode.next
-    else {
-      while (currentIndex < index) {
-        currentIndex++
-        previousNode = currentNode
-        currentNode = currentNode.next
-      }
-      previousNode.next = currentNode.next
-    }
-    length--
-    return currentNode.element
+    this.length--
+    return lastNode.val
   }
 }
