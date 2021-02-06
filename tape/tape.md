@@ -64,3 +64,5 @@ while (l <= r) {
   - use more memory than array
 - type
   - singly | doubly | circular
+
+4. hash table
