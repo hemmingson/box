@@ -104,4 +104,8 @@ class LinkedList {
       this.length--
     }
   }
+
+  isEmpty() {
+    return !this.length
+  }
 }
