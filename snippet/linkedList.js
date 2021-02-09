@@ -108,4 +108,50 @@ class LinkedList {
   isEmpty() {
     return !this.length
   }
+
+  at(idx) {
+    if (idx > this.length - 1) return null
+
+    let cur = this.head
+    for (let i = 0; i < idx; i++) {
+      cur = cur.next
+    }
+
+    return cur
+  }
+
+  insert(val, idx) {
+    const node = new Node(val)
+    if (idx > this.length - 1) idx = this.length - 1
+
+    let cur = this.head
+    for (let i = 0; i < idx - 1; i++) {
+      cur = cur.next
+    }
+
+    let prev = cur
+    node.next = cur.next
+    prev.next = node
+
+    this.length++
+  }
+
+  remove(idx) {
+    if (idx > this.length - 1) return null
+
+    let cur = this.head
+    if (!idx) {
+      this.head = cur.next
+      this.length--
+      return
+    }
+
+    for (let i = 0; i < idx - 1; i++) {
+      cur = cur.next
+    }
+
+    cur.next = cur.next.next
+
+    this.length--
+  }
 }
