@@ -1,36 +1,39 @@
-var Trie = function () {
-  this.root = {}
-}
+class Trie {
+  constructor() {
+    this.root = {}
+  }
 
-Trie.prototype.insert = function (word) {
-  let node = this.root
+  insert(word) {
+    let node = this.root
 
-  word.split('').forEach((char) => {
-    if (!node[char]) node[char] = {}
+    for (let c of word) {
+      if (!node[c]) node[c] = {}
 
-    node = node[char]
-  })
+      node = node[c]
+    }
 
-  node.isEnd = true
-}
+    node.isEnd = true
+  }
 
-Trie.prototype.search = function (word) {
-  const node = this.searchNode(word)
+  traverse(word) {
+    let node = this.root
 
-  return !!(node && node.isEnd)
-}
+    for (let c of word) {
+      if (!node[c]) return null
 
-Trie.prototype.startsWith = function (prefix) {
-  const node = this.searchNode(prefix)
-  return !!node
-}
+      node = node[c]
+    }
 
-Trie.prototype.searchNode = function (word) {
-  let node = this.root
+    return node
+  }
 
-  for (const char of word.split('')) {
-    if (!node[char]) return null
+  search(word) {
+    const node = this.traverse(word)
 
-    node = node[char]
+    return !!(node && node.isEnd)
+  }
+
+  startsWith(prefix) {
+    return !!this.traverse(prefix)
   }
 }
