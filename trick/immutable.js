@@ -16,3 +16,5 @@ console.log(Math.floor(y) === ~~y) // true
 console.log(`${3 & 1 ? 'odd' : 'even'}`) // odd
 
 console.log(0.1 | 0) // 0
+
+console.log(Math.log(0)) // -Infinity
