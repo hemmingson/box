@@ -14,7 +14,7 @@ class LinkedList {
   unshift(val) {
     const node = new Node(val)
 
-    if (!this.head) this.head.next = node
+    if (!this.head) this.head = node
     else [this.head, node.next] = [node, this.head]
 
     this.length++
