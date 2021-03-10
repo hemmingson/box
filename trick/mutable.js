@@ -37,6 +37,12 @@ const flatten = (arr) => {
 console.log(flatten([0, [1, [2]]])) // [0, 1, 2]
 console.log([0, [1, [2]]].flat(2)) // [0, 1, 2]
 
-function isNumber(n){
+function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n)
+}
+
+const switchShorthand = {
+  0: fn0,
+  1: fn1,
+  2: fn2,
 }
