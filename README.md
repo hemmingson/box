@@ -10,7 +10,7 @@ javascripter handbook
 
 - [lodash.js](https://github.com/lodash/lodash)
 
-- [day.js](https://github.com/iamkun/dayjs)
+- [date-fns](https://github.com/date-fns/date-fns)
 
 - [chroma.js](https://github.com/gka/chroma.js)
 
