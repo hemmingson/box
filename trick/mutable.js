@@ -47,3 +47,14 @@ const switchShorthand = {
   1: fn1,
   2: fn2,
 }
+
+const swap = (arr) => {
+  const len = arr.length
+
+  ;[arr[0], arr[len - 1]] = [arr[len - 1], arr[0]]
+}
+
+const isTwin = (arr1, arr2) =>
+  arr1.length === arr2.length && arr1.every((val, idx) => val === arr2[idx])
+
+console.log([undefined, null, false, 0, ''].filter(Boolean)) // []
