@@ -58,3 +58,9 @@ const isTwin = (arr1, arr2) =>
   arr1.length === arr2.length && arr1.every((val, idx) => val === arr2[idx])
 
 console.log([undefined, null, false, 0, ''].filter(Boolean)) // []
+console.log([1, 'hem', true].every(Boolean)) // true
+console.log([1, 'hem', false].some(Boolean)) // true
+
+const shuffle = (arr) => {
+  arr.sort(() => Math.random() - 0.5)
+}
