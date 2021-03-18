@@ -65,4 +65,17 @@ while (l <= r) {
 - type
   - singly | doubly | circular
 
-4. hash table
+4. stack and queue
+
+> collection of entities with several operations
+
+![](../assets/stack-queue.png)
+
+|       | in      | out   |
+| ----- | ------- | ----- |
+| stack | push    | pop   |
+|       | unshift | shift |
+| queue | push    | shift |
+|       | unshift | pop   |
+
+5. hash table
