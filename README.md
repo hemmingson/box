@@ -5,7 +5,11 @@ javascripter handbook
 ---
 
 ```javascript
-// ⚒️ utilities
+/**
+ * =======
+ * utility
+ * =======
+ */
 ```
 
 - [lodash.js](https://github.com/lodash/lodash)
