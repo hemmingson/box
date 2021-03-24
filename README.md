@@ -4,14 +4,6 @@ javascripter handbook
 
 ---
 
-```javascript
-/**
- * =======
- * utility
- * =======
- */
-```
-
 - [lodash.js](https://github.com/lodash/lodash)
 
 - [date-fns](https://github.com/date-fns/date-fns)
