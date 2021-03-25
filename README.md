@@ -4,18 +4,30 @@ javascripter handbook
 
 ---
 
-- [lodash.js](https://github.com/lodash/lodash)
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.ctfassets.net%2Fhspc7zpa5cvq%2F2R4dw4464nMTeqnZs4DemF%2Fdeb48860f73cb5228fe4fc7c293fbad4%2FJSConf_US.png&f=1&nofb=1" width="260" />
+
+## 🏠 homepage
+
+- [ ] [hello, world](https://github.com/alexgurr/react-coding-challenges)
+
+<details>
+
+<summary>utilities</summary>
+
+- [lodash](https://github.com/lodash/lodash)
 
 - [date-fns](https://github.com/date-fns/date-fns)
 
-- [chroma.js](https://github.com/gka/chroma.js)
+- 💅 [chroma](https://github.com/gka/chroma.js)
 
-- [clipboard.js](https://github.com/zenorocha/clipboard.js)
+- 📋 [clipboard](https://github.com/zenorocha/clipboard.js)
 
-- [mousetrap.js](https://github.com/ccampbell/mousetrap)
+- 🖱️ [mousetrap](https://github.com/ccampbell/mousetrap)
 
-- [slick.js](https://github.com/kenwheeler/slick)
+- carousel [slick](https://github.com/kenwheeler/slick)
 
-- [bling.js](https://gist.github.com/paulirish/12fb951a8b893a454b32)
+- 💰 [bling](https://gist.github.com/paulirish/12fb951a8b893a454b32)
 
-- [papa parse](https://github.com/mholt/PapaParse)
+- csv parser [papa](https://github.com/mholt/PapaParse)
+
+</details>
