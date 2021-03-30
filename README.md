@@ -12,7 +12,7 @@ javascripter handbook
 
 <details>
 
-<summary>utilities</summary>
+<summary>util</summary>
 
 - [lodash](https://github.com/lodash/lodash)
 
@@ -29,5 +29,19 @@ javascripter handbook
 - 💰 [bling](https://gist.github.com/paulirish/12fb951a8b893a454b32)
 
 - csv parser [papa](https://github.com/mholt/PapaParse)
+
+</details>
+
+<details>
+
+<summary>lib</summary>
+
+- [styled-components](https://styled-components.com/)
+
+- [parcel](https://parceljs.org/)
+
+- [yeoman](https://yeoman.io/)
+
+- [ink](https://github.com/vadimdemedes/ink/)
 
 </details>
