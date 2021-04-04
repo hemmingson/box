@@ -65,3 +65,6 @@ console.log([1, 'hem', false].some(Boolean)) // true
 const shuffle = (arr) => {
   arr.sort(() => Math.random() - 0.5)
 }
+
+const typeOf = (obj) =>
+  Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
