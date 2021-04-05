@@ -79,3 +79,7 @@ while (l <= r) {
 |       | unshift | pop   |
 
 5. hash table
+
+6. tree
+
+![](../assets/tree.png)
