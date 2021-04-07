@@ -12,56 +12,41 @@ class BinarySearchTree {
   }
 
   add(key) {
-    const dummy = new Node(key)
-
-    !this.root ? (this.root = node) : this.addNode(this.root, dummy)
+    !this.root
+      ? (this.root = new Node(key))
+      : this.insertNode(this.root, new Node(key))
   }
 
-  addNode(node, newNode) {
-    if (newNode.key < node.key) {
-      !node.left ? (node.left = newNode) : this.addNode(node.left, newNode)
+  insertNode(target, node) {
+    if (node.key < target.key) {
+      !target.left ? (target.left = node) : this.insertNode(target.left, node)
       return
     }
 
-    !node.right ? (node.right = newNode) : this.addNode(node.right, newNode)
+    !target.right ? (target.right = node) : this.insertNode(target.right, node)
   }
 
   delete(key) {
-    this.root = this.deleteNode(this.root, key)
+    this.root = this.removeNode(this.root, key)
   }
 
-  deleteNode(node, key) {
+  removeNode(node, key) {
     if (!node) return null
 
-    if (key < node.key) {
-      node.left = this.deleteNode(node.left, key)
-      return node
-    } else if (key > node.key) {
-      node.right = this.deleteNode(node.right, key)
-      return node
-    } else {
-      if (!node.left && !node.right) {
-        node = null
-        return node
-      } else if (!node.left) {
-        node = node.right
-        return node
-      } else if (!node.right) {
-        node = node.left
-        return node
-      }
+    if (node.key === key) {
+      if (!node.left) return node.right
+      if (!node.right) return node.left
 
-      const dummy = this.min(node.right)
-      node.key = dummy.key
+      let cur = node.right
+      while (cur.left) cur = cur.left
 
-      node.right = this.deleteNode(node.right, dummy.key)
-      return node
+      cur.left = node.left
+      return node.right
     }
-  }
 
-  min(node) {
-    if (!node.left) return node
+    if (node.key < key) node.right = this.removeNode(node.right, key)
+    else node.left = this.removeNode(node.left, key)
 
-    return this.min(node.left)
+    return node
   }
 }
