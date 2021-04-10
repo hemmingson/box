@@ -29,3 +29,19 @@ Number.prototype[Symbol.iterator] = function* () {
   }
 }
 console.log([...2]) // [0, 1, 2]
+
+const freeze = (obj) => {
+  Object.freeze(obj)
+
+  Object.getOwnPropertyNames(obj).forEach((prop) => {
+    if (
+      obj.hasOwnProperty(prop) &&
+      obj[prop] !== null &&
+      (typeof obj[prop] === 'object' || typeof obj[prop] === 'function') &&
+      !Object.isFrozen(obj[prop])
+    )
+      freeze(obj[prop])
+  })
+
+  return obj
+}
