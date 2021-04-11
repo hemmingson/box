@@ -4,10 +4,6 @@ javascripter handbook
 
 ---
 
-<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.ctfassets.net%2Fhspc7zpa5cvq%2F2R4dw4464nMTeqnZs4DemF%2Fdeb48860f73cb5228fe4fc7c293fbad4%2FJSConf_US.png&f=1&nofb=1" width="260" />
-
-## 🏠 homepage
-
 - [ ] [hello, world](https://github.com/alexgurr/react-coding-challenges)
 
 <details>
