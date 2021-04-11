@@ -31,17 +31,17 @@ Number.prototype[Symbol.iterator] = function* () {
 console.log([...2]) // [0, 1, 2]
 
 const freeze = (obj) => {
-  Object.freeze(obj)
-
   Object.getOwnPropertyNames(obj).forEach((prop) => {
+    const val = obj[prop]
+
     if (
       obj.hasOwnProperty(prop) &&
-      obj[prop] !== null &&
-      (typeof obj[prop] === 'object' || typeof obj[prop] === 'function') &&
-      !Object.isFrozen(obj[prop])
+      val &&
+      ['object', 'function'].includes(typeof val) &&
+      !Object.isFrozen(val)
     )
-      freeze(obj[prop])
+      freeze(val)
   })
 
-  return obj
+  return Object.freeze(obj)
 }
