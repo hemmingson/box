@@ -4,7 +4,7 @@ javascripter handbook
 
 ---
 
-- [ ] [hello, world](https://github.com/alexgurr/react-coding-challenges)
+- [ ] [hello world 👋](https://github.com/alexgurr/react-coding-challenges)
 
 <details>
 
