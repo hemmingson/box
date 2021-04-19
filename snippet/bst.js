@@ -49,4 +49,12 @@ class BinarySearchTree {
 
     return node
   }
+
+  leaves(node) {
+    if (!node) return 0
+
+    if (!node.left && !node.right) return 1
+
+    return this.leaf(node.left) + this.leaf(node.right)
+  }
 }
