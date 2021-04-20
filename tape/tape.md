@@ -83,3 +83,18 @@ while (l <= r) {
 6. tree
 
 ![](../assets/tree.png)
+
+- terminology
+
+  - root
+  - edge
+  - leaf
+  - parent
+  - child
+  - height
+  - depth
+
+- traverse
+  - `dfs` as far as possible along each branch before backtracking
+    - types pre-order | in-order | post-order
+  - `bfs` neighbor nodes first before moving to next level
