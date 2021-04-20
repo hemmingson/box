@@ -55,6 +55,6 @@ class BinarySearchTree {
 
     if (!node.left && !node.right) return 1
 
-    return this.leaf(node.left) + this.leaf(node.right)
+    return this.leaves(node.left) + this.leaves(node.right)
   }
 }
