@@ -50,11 +50,25 @@ class BinarySearchTree {
     return node
   }
 
-  leaves(node) {
-    if (!node) return 0
+  get leaves() {
+    const count = (node) => {
+      if (!node) return 0
 
-    if (!node.left && !node.right) return 1
+      if (!node.left && !node.right) return 1
 
-    return this.leaves(node.left) + this.leaves(node.right)
+      return count(node.left) + count(node.right)
+    }
+
+    return count(this.root)
+  }
+
+  get inorder() {
+    const traverse = (node) => {
+      if (!node) return []
+
+      return [...traverse(node.left), node.key, ...traverse(node.right)]
+    }
+
+    return traverse(this.root)
   }
 }
