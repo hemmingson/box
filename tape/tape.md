@@ -80,6 +80,8 @@ while (l <= r) {
 
 5. hash table
 
+![](../assets/hash-table.png)
+
 6. tree
 
 ![](../assets/tree.png)
