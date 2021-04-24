@@ -82,6 +82,9 @@ while (l <= r) {
 
 ![](../assets/hash-table.png)
 
+- unsorted
+- chaining
+
 6. tree
 
 ![](../assets/tree.png)
