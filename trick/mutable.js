@@ -72,3 +72,17 @@ const typeOf = (obj) =>
 const truncate = (arr, len) => {
   arr.length = len
 }
+
+const f0 = (num) => {
+  f1(num, (res) => {
+    console.log(res)
+  })
+
+  return num
+}
+const f1 = (num, cb) => {
+  num++
+
+  cb(num)
+}
+console.log(f0(0)) // 1 0
