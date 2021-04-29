@@ -26,6 +26,8 @@ new Set([...m].filter((item) => !n.has(item)))
 
 `entries` return tuples
 
+<br />
+
 2. binary search
 
 ![](../assets/binary-search.png)
@@ -50,6 +52,8 @@ while (l <= r) {
 | >>       | sign-propagating right shift | the copies of the leftmost bit are shifted in |
 | >>>      | zero-fill right shift        | fill 0 bits to the left                       |
 
+<br />
+
 3. linked list
 
 > a linked list is a linear collection of data elements whose order is not given by their physical placement in memory
@@ -65,6 +69,8 @@ while (l <= r) {
 - type
   - singly | doubly | circular
 
+<br />
+
 4. stack and queue
 
 > collection of entities with several operations
@@ -78,12 +84,17 @@ while (l <= r) {
 | queue | push    | shift |
 |       | unshift | pop   |
 
+<br />
+
 5. hash table
 
 ![](../assets/hash-table.png)
 
-- unsorted
-- chaining
+- unordered associative array
+- hash function maps string to numbers
+- chaining or store tuple to avoid hash collisions
+
+<br />
 
 6. tree
 
