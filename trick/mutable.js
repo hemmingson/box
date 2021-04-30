@@ -86,3 +86,6 @@ const f1 = (num, cb) => {
   cb(num)
 }
 console.log(f0(0)) // 1 0
+
+const target = {}
+console.log(target['constructor'].name) // 'Object'
