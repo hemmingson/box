@@ -108,3 +108,18 @@ Object.defineProperty(birth, Symbol.iterator, {
 })
 const { year, ...rest } = birth
 console.log(rest) // { month: 11 }
+
+const o = {}
+Object.defineProperty(o, Symbol.iterator, {
+  value() {
+    const keys = Object.keys(o)
+    let idx = 0
+
+    return {
+      next: () => ({
+        value: o[keys[idx++]],
+        done: idx > keys.length,
+      }),
+    }
+  },
+})
