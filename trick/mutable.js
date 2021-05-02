@@ -89,3 +89,22 @@ console.log(f0(0)) // 1 0
 
 const target = {}
 console.log(target['constructor'].name) // 'Object'
+
+const birth = {
+  year: 1995,
+  month: 11,
+
+  // *[Symbol.iterator]() {
+  //   yield 1995
+  //   yield 11
+  // },
+}
+Object.defineProperty(birth, Symbol.iterator, {
+  enumerable: false,
+  value: function* () {
+    yield 1995
+    yield 11
+  },
+})
+const { year, ...rest } = birth
+console.log(rest) // { month: 11 }
