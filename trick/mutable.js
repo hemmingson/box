@@ -123,3 +123,18 @@ Object.defineProperty(o, Symbol.iterator, {
     }
   },
 })
+
+arr[Symbol.iterator] = function () {
+  let i = 0,
+    arr = this
+
+  return {
+    next: function () {
+      if (i >= arr.length) return { done: true }
+
+      const value = arr[i]
+      i++
+      return { value, done: false }
+    },
+  }
+}
