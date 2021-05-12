@@ -138,3 +138,12 @@ arr[Symbol.iterator] = function () {
     },
   }
 }
+
+outer: for (let c of '💴 2') {
+  inner: for (let n of [0, 1, 2]) {
+    if (c === ' ') break outer
+    if (n === 1) continue inner
+
+    console.log(n) // 0 2
+  }
+}
