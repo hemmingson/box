@@ -153,4 +153,7 @@ for (let info of javascripter.values()) {
   console.log(info) // hem 25
 }
 
+for (let [k, v] of Object.entries({ name: 'hem', age: '25' })) {
+}
+
 const isEmoji = (arr) => arr.every((ele) => ele > 'ÿ')
