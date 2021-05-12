@@ -147,3 +147,8 @@ outer: for (let c of '💴 2') {
     console.log(n) // 0 2
   }
 }
+
+const javascripter = new Map(Object.entries({ name: 'hem', age: '25' }))
+for (let info of javascripter.values()) {
+  console.log(info) // hem 25
+}
