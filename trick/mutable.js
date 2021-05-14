@@ -156,4 +156,4 @@ for (let info of javascripter.values()) {
 for (let [k, v] of Object.entries({ name: 'hem', age: '25' })) {
 }
 
-const isEmoji = (arr) => arr.every((ele) => ele > 'ÿ')
+const isEmoji = (arr) => arr.every((ele) => ele > 'ÿ') // '\u00ff'
