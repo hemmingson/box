@@ -90,9 +90,11 @@ let trap = {
     return 0
   },
   s: Symbol('s'),
+
+  e: Object.create(null, { p: { value: 0, enumerable: false } }),
 }
 
-console.log(JSON.stringify(trap)) // {"n0":null,"n1":null}
+console.log(JSON.stringify(trap)) // {"n0":null,"n1":null,"e":{}}
 
 let baz = {},
   circle = {
