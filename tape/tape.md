@@ -114,3 +114,39 @@ while (l <= r) {
   - `dfs` as far as possible along each branch before backtracking
     - types pre-order | in-order | post-order
   - `bfs` neighbor nodes first before moving to next level
+
+<br />
+
+7. heap
+
+> a specialized tree-based data structure which is essentially an almost complete tree that satisfies the heap property
+
+![](../assets/heap.png)
+
+- feature
+
+  - tree based and partially ordered
+  - max & min
+  - parent >= self >= child
+
+- binary heap
+
+  - complete binary tree
+  - effective for implementing priority queue
+  - usually implement as array
+
+- operation
+  - peek
+  - poll(extract)
+  - push(insert)
+  - indexes
+  - size
+  - merge
+  - isEmpty
+
+|        | complexity |
+| ------ | ---------- |
+| push   | O(logn)    |
+| poll   | O(logn)    |
+| search | O(n)       |
+| peek   | O(1)       |
