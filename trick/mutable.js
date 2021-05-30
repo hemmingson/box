@@ -157,3 +157,10 @@ for (let [k, v] of Object.entries({ name: 'hem', age: '25' })) {
 }
 
 const isEmoji = (arr) => arr.every((ele) => ele > 'ÿ') // '\u00ff'
+
+const obj = Object.fromEntries(
+  new Map([
+    ['name', 'hem'],
+    ['age', 25],
+  ])
+)
