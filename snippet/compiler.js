@@ -1,4 +1,7 @@
-// ⚙️ compiler
+/**
+ * ⚙️ compiler
+ * @example (add 2 (subtract 4 2))
+ */
 
 const compiler = (src) => {
   const tokens = tokenizer(src)
