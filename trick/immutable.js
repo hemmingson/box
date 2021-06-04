@@ -45,3 +45,8 @@ const freeze = (obj) => {
 
   return Object.freeze(obj)
 }
+
+const num = 665_772
+console.log(num) // 665772
+
+console.log('javascript'.replaceAll('i', '1')) // javascr1pt
