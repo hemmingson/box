@@ -51,4 +51,4 @@ console.log(num) // 665772
 
 console.log('javascript'.replaceAll('i', '1')) // javascr1pt
 
-const $undefined = void 0 // secure assignment
+const undefined = void 0 // secure assignment
