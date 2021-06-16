@@ -176,3 +176,9 @@ const visualizeProtoChain = (o) => {
 
   return visual
 }
+
+let r = 10, A, u
+with(Math) {
+	A = PI * pow(r, 2)
+	u = 2 * PI * r
+}
