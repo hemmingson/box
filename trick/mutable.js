@@ -164,3 +164,15 @@ const obj = Object.fromEntries(
     ['age', 25],
   ])
 )
+
+const visualizeProtoChain = (o) => {
+  let proto = o.constructor.prototype,
+    visual = 'o'
+
+  while (proto) {
+    visual += ' -> ' + proto.constructor.name
+    proto = Object.getPrototypeOf(proto)
+  }
+
+  return visual
+}
