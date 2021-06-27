@@ -7,9 +7,9 @@
 const useBin = (f, t) => {
   let bin = 1
 
-  return () => {
+  return (...args) => {
     if (bin) {
-      f()
+      f(...args)
       bin = 0
 
       setTimeout(() => {
@@ -22,11 +22,11 @@ const useBin = (f, t) => {
 const useTime = (f, t) => {
   let prev = 0
 
-  return () => {
+  return (...args) => {
     const now = Date.now()
 
     if (now - prev >= t) {
-      f()
+      f(...args)
 
       prev = now
     }
