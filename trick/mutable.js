@@ -190,7 +190,8 @@ const len = 2
 console.log([...Array(len).keys()]) // [0, 1]
 
 function printArgs(...args) {
+  console.log([...arguments])
   console.log(args)
   console.log(Array.prototype.slice.call(arguments))
 }
-printArgs(0, null, 'arg') // [0, null, 'arg'] [0, null, 'arg']
+printArgs(0, null, 'arg') // [0, null, 'arg']
