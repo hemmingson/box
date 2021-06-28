@@ -185,3 +185,6 @@ with (Math) {
   A = PI * pow(r, 2)
   u = 2 * PI * r
 }
+
+const len = 2
+console.log([...Array(len).keys()]) // [0, 1]
