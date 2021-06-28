@@ -38,6 +38,7 @@ console.log(flatten([0, [1, [2]]])) // [0, 1, 2]
 console.log([0, [1, [2]]].flat(2)) // [0, 1, 2]
 console.log([0, [1, [2]]].flat(Infinity)) // [0, 1, 2]
 console.log([0, [1, [2]]].toString().split(',')) // [0, 1, 2]
+console.log([].concat.apply([], [0, [1, [2]]])) // [0, 1, [2]]
 
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n)
@@ -177,8 +178,10 @@ const visualizeProtoChain = (o) => {
   return visual
 }
 
-let r = 10, A, u
-with(Math) {
-	A = PI * pow(r, 2)
-	u = 2 * PI * r
+let r = 10,
+  A,
+  u
+with (Math) {
+  A = PI * pow(r, 2)
+  u = 2 * PI * r
 }
