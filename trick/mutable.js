@@ -187,7 +187,9 @@ with (Math) {
 }
 
 const len = 2
+const start = 1
 console.log([...Array(len).keys()]) // [0, 1]
+console.log(Array.from({ length: len }, (e, i) => i + start)) // [1, 2]
 
 function printArgs(...args) {
   console.log([...arguments])
