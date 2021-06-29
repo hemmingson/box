@@ -197,3 +197,6 @@ function printArgs(...args) {
   console.log(Array.prototype.slice.call(arguments))
 }
 printArgs(0, null, 'arg') // [0, null, 'arg']
+
+const range = (start, stop, step) =>
+  Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step)
