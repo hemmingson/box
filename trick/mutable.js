@@ -200,3 +200,11 @@ printArgs(0, null, 'arg') // [0, null, 'arg']
 
 const range = (start, stop, step) =>
   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step)
+
+const info = ['hem', 'dev']
+const man =
+  (strs, ...keys) =>
+  (val) =>
+    `${keys[0]}${strs[0] + strs[1]}${keys[1]}${val}`
+const hem = man`${info[0]} is a ${info[1]}.`
+console.log(hem('.')) // hem is a dev.
