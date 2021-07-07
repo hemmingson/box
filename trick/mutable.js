@@ -208,3 +208,14 @@ const man =
     `${keys[0]}${strs[0] + strs[1]}${keys[1]}${val}`
 const hem = man`${info[0]} is a ${info[1]}.`
 console.log(hem('.')) // hem is a dev.
+
+$global.name = 'facebook'
+const dev = {
+  name: 'hem',
+  hi() {
+    return this.name
+  },
+}
+const age = (26, 25)
+console.log(age) // 25
+console.log((0, dev.hi)()) // 'facebook' <- cut binding
