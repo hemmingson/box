@@ -219,3 +219,12 @@ const dev = {
 const age = (26, 25)
 console.log(age) // 25
 console.log((0, dev.hi)()) // 'facebook' <- cut binding
+
+const o = {
+  dev: 'hem',
+  magic: 'javascript',
+}
+let dev = 'evan'
+let magic = 'vue'
+;({ dev, magic } = o)
+console.log(dev, magic) // hem javascript
