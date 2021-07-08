@@ -228,3 +228,6 @@ let dev = 'evan'
 let magic = 'vue'
 ;({ dev, magic } = o)
 console.log(dev, magic) // hem javascript
+
+const promise = async () => 26 // async turns return type to a Promise
+promise().then(console.log) // 26
