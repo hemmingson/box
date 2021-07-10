@@ -231,3 +231,9 @@ console.log(dev, magic) // hem javascript
 
 const promise = async () => 26 // async turns return type to a Promise
 promise().then(console.log) // 26
+
+const dev = {
+  name: 'hem',
+  age: 25,
+}
+const { age, ..._dev } = dev // avoid delete keyword
