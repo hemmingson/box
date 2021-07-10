@@ -241,3 +241,7 @@ const { age, ..._dev } = dev // avoid delete keyword
 const devs = ['hem', 'dan', 'evan']
 const { 1: react, 2: vue } = devs
 console.log(react, vue) // dan evan
+
+const libs = ['react', 'vue', 'angular', 'svelte']
+const [best, , , ...future] = libs
+console.log(future) // ['svelte']
