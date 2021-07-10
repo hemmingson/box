@@ -55,3 +55,7 @@ const undefined = void 0 // secure assignment
 
 console.log(String.raw`\n` === '\\n') // true
 console.log(String.raw({ raw: '024' }, 1, 3)) // 01234
+
+const bad = 1000000
+const good = 1_000_000
+const better = 1e6
