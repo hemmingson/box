@@ -1,6 +1,14 @@
 // λ functional programming 💛
 
-const compose = (...fns) => (x) => fns.reduceRight((acc, f) => f(acc), x)
+const compose =
+  (...fns) =>
+  (x) =>
+    fns.reduceRight((acc, f) => f(acc), x)
+
+const pipe =
+  (...fns) =>
+  (x) =>
+    fns.reduce((acc, f) => f(acc), x)
 
 const curry = (f) => {
   let params = []
